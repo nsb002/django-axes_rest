@@ -78,3 +78,8 @@ path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
 8. Visit http://127.0.0.1:8000/api/ to consume the API locally.
    Note that your user needs to be staff to access the API.
+
+## Some ideas for the future
+
+* Integrate **http://ip-api.com** IP informations and store them using an IP model to limit the number of requests
+* Add more complete and advanced tests in **tests.py**

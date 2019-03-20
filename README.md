@@ -10,6 +10,8 @@ Django REST framework: https://www.django-rest-framework.org
 
 Run `python setup.py sdist`. This creates a directory called **dist** and builds the package inside. You can then install it with **pip** like this: `pip install dist/django-axes_rest-0.1.tar.gz`
 
+You can download the latest build there: https://github.com/nsb002/django-axes_rest/releases
+
 ## Quick start
 
 1. Install axes and rest_framework with pip:

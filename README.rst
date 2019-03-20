@@ -18,7 +18,7 @@ Quick start
    setting like this::
 
     INSTALLED_APPS = [
-        ...
+        # ...
         'axes',
         'axes_rest',
         'rest_framework',
@@ -28,8 +28,9 @@ Quick start
 
     AUTHENTICATION_BACKENDS = [
         'axes.backends.AxesModelBackend',
-	'django.contrib.auth.backends.ModelBackend',
-        ...
+        # ...
+	    'django.contrib.auth.backends.ModelBackend',
+        # ...
     ]
 
 4. You will probably have to change your CACHES setting like this
@@ -46,7 +47,14 @@ Quick start
 
     AXES_CACHE = 'axes_cache'
 
-5. You can also configure axes if you don't want it to lock your IP at failure
+5. You may have to configure axes like this to be used with a reverse proxy::
+
+    AXES_PROXY_COUNT = 1
+    AXES_BEHIND_REVERSE_PROXY = True
+    AXES_REVERSE_PROXY_HEADER = 'HTTP_X_REAL_IP'
+    AXES_META_PRECEDENCE_ORDER = ('HTTP_X_REAL_IP','HTTP_X_FORWARDED_FOR',)
+
+6. You can also configure axes if you don't want it to lock your IP at failure
    and change pagination like this::
 
     AXES_LOCK_OUT_AT_FAILURE = False
@@ -56,12 +64,12 @@ Quick start
         'PAGE_SIZE': 10
     }
 
-6. Include the API URLconf in your project urls.py like this::
+7. Include the API URLconf in your project urls.py like this::
 
     path('api/', include('axes_rest.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
-7. Run `python manage.py migrate` to create the axes models.
+8. Run `python manage.py migrate` to create the axes models.
 
-8. Visit http://127.0.0.1:8000/api/ to consume the API locally.
+9. Visit http://127.0.0.1:8000/api/ to consume the API locally.
    Note that your user needs to be staff to access the API.

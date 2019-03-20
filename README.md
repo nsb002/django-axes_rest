@@ -18,15 +18,15 @@ You can download the latest build there: https://github.com/nsb002/django-axes_r
 
 `pip install django-axes==4.5.4 djangorestframework==3.9.2`
 
-2. Add **'axes'**, **'rest_framework'** and **'axes_rest'** to your **INSTALLED_APPS**
+2. Add **'axes'**, **'axes_rest'** and **'rest_framework'** to your **INSTALLED_APPS**
    setting like this:
 
 ```
 INSTALLED_APPS = [
   ...
   'axes',
-  'rest_framework',
   'axes_rest',
+  'rest_framework',
 ]
 ```
 

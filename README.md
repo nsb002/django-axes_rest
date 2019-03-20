@@ -77,16 +77,22 @@ AXES_CACHE = 'axes_cache'
     }
 ```
 
-7. Include the API URLconf in your project **urls.py** like this:
+7. You may also have to configure your login URL like this::
+
+```
+    LOGIN_URL = '/api-auth/login/?next=/api/'
+```
+
+8. Include the API URLconf in your project **urls.py** like this:
 
 ```
 path('api/', include('axes_rest.urls')),
 path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ```
 
-8. Run `python manage.py migrate` to create the **axes** models.
+9. Run `python manage.py migrate` to create the **axes** models.
 
-9. Visit http://127.0.0.1:8000/api/ to consume the API locally.
+10. Visit http://127.0.0.1:8000/api/ to consume the API locally.
    Note that your user needs to be staff to access the API.
 
 ## Some ideas for the future

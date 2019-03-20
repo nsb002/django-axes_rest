@@ -64,7 +64,7 @@ Quick start
         'PAGE_SIZE': 10
     }
 
-7. You may also have to configure your login URL like this::
+7. You may also have to configure your LOGIN_URL like this::
 
     LOGIN_URL = '/api-auth/login/?next=/api/'
 

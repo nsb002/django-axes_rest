@@ -56,7 +56,7 @@ CACHES = {
 AXES_CACHE = 'axes_cache'
 ```
 
-5. You may have to configure axes like this to be used with a reverse proxy::
+5. You may have to configure **axes** like this to be used with a **reverse proxy**:
 
 ```
     AXES_PROXY_COUNT = 1
@@ -66,7 +66,7 @@ AXES_CACHE = 'axes_cache'
 ```
 
 6. You can also configure **axes** if you don't want it to lock your IP at failure
-   and change pagination like this:
+   and change its pagination like this:
 
 ```
     AXES_LOCK_OUT_AT_FAILURE = False
@@ -77,7 +77,7 @@ AXES_CACHE = 'axes_cache'
     }
 ```
 
-7. You may also have to configure your login URL like this::
+7. You may also have to configure your **LOGIN_URL** like this:
 
 ```
     LOGIN_URL = '/api-auth/login/?next=/api/'

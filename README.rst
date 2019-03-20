@@ -8,8 +8,6 @@ It depends on Django Axes and Django REST framework.
 Django Axes : https://github.com/jazzband/django-axes
 Django REST framework : https://www.django-rest-framework.org
 
-Detailed documentation is in the "docs" directory.
-
 Quick start
 -----------
 
@@ -34,7 +32,8 @@ Quick start
         ...
     ]
 
-4. You will probably have to change your CACHES settings like this::
+4. You will probably have to change your CACHES setting like this
+   for axes to work::
 
     CACHES = {
         'default': {

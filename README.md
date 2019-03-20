@@ -21,7 +21,7 @@ You can download the latest build there: https://github.com/nsb002/django-axes_r
 2. Add **'axes'**, **'axes_rest'** and **'rest_framework'** to your **INSTALLED_APPS**
    setting like this:
 
-```
+```python
 INSTALLED_APPS = [
   # ...
   'axes',
@@ -32,7 +32,7 @@ INSTALLED_APPS = [
 
 3. Add axes to your **AUTHENTICATION_BACKENDS** setting like this:
 
-```
+```python
 AUTHENTICATION_BACKENDS = [
   'axes.backends.AxesModelBackend',
   # ...
@@ -43,7 +43,7 @@ AUTHENTICATION_BACKENDS = [
 
 4. You will probably have to change your **CACHES** setting like this for **axes** to work:
 
-```
+```python
 CACHES = {
   'default': {
     'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
@@ -58,7 +58,7 @@ AXES_CACHE = 'axes_cache'
 
 5. You may have to configure **axes** like this to be used with a **reverse proxy**:
 
-```
+```python
     AXES_PROXY_COUNT = 1
     AXES_BEHIND_REVERSE_PROXY = True
     AXES_REVERSE_PROXY_HEADER = 'HTTP_X_REAL_IP'
@@ -68,7 +68,7 @@ AXES_CACHE = 'axes_cache'
 6. You can also configure **axes** if you don't want it to lock your IP at failure
    and change its pagination like this:
 
-```
+```python
     AXES_LOCK_OUT_AT_FAILURE = False
 
     REST_FRAMEWORK = {
@@ -79,13 +79,13 @@ AXES_CACHE = 'axes_cache'
 
 7. You may also have to configure your **LOGIN_URL** like this:
 
-```
+```python
     LOGIN_URL = '/api-auth/login/?next=/api/'
 ```
 
 8. Include the API URLconf in your project **urls.py** like this:
 
-```
+```python
 path('api/', include('axes_rest.urls')),
 path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ```
